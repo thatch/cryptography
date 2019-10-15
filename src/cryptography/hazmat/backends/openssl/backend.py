@@ -723,7 +723,7 @@ class Backend(object):
     def create_cmac_ctx(self, algorithm):
         return _CMACContext(self, algorithm)
 
-    def create_x509_csr(self, builder, private_key, algorithm):
+    def create_x509_csr(self, builder, private_key, algorithm, public_key=None):
         if not isinstance(builder, x509.CertificateSigningRequestBuilder):
             raise TypeError('Builder type mismatch.')
 
@@ -762,7 +762,8 @@ class Backend(object):
         self.openssl_assert(res == 1)
 
         # Set subject public key.
-        public_key = private_key.public_key()
+        if public_key is None:
+            public_key = private_key.public_key()
         res = self._lib.X509_REQ_set_pubkey(
             x509_req, public_key._evp_pkey
         )

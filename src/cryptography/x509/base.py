@@ -421,13 +421,13 @@ class CertificateSigningRequestBuilder(object):
             self._subject_name, self._extensions + [extension]
         )
 
-    def sign(self, private_key, algorithm, backend):
+    def sign(self, private_key, algorithm, backend, public_key=None):
         """
         Signs the request using the requestor's private key.
         """
         if self._subject_name is None:
             raise ValueError("A CertificateSigningRequest must have a subject")
-        return backend.create_x509_csr(self, private_key, algorithm)
+        return backend.create_x509_csr(self, private_key, algorithm, public_key)
 
 
 class CertificateBuilder(object):
