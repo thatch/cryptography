@@ -35,7 +35,7 @@ src_dir = os.path.join(base_dir, "src")
 sys.path.insert(0, src_dir)
 
 about = {}
-with open(os.path.join(src_dir, "cryptography", "__about__.py")) as f:
+with open(os.path.join(src_dir, "cryptography_patched", "__about__.py")) as f:
     exec(f.read(), about)
 
 
@@ -270,6 +270,6 @@ setup(
 
     # for cffi
     zip_safe=False,
-    ext_package="cryptography.hazmat.bindings",
+    ext_package="cryptography_patched.hazmat.bindings",
     **keywords_with_side_effects(sys.argv)
 )
