@@ -16,15 +16,15 @@ import pytest
 import six
 
 from cryptography import utils, x509
-from cryptography.hazmat.backends.interfaces import (
+from cryptography_patched.hazmat.backends.interfaces import (
     DSABackend, EllipticCurveBackend, RSABackend, X509Backend
 )
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.asymmetric import ec
-from cryptography.x509 import DNSName, NameConstraints, SubjectAlternativeName
-from cryptography.x509.extensions import _key_identifier_from_public_key
-from cryptography.x509.general_name import _lazy_import_idna
-from cryptography.x509.oid import (
+from cryptography_patched.hazmat.primitives import hashes
+from cryptography_patched.hazmat.primitives.asymmetric import ec
+from cryptography_patched.x509 import DNSName, NameConstraints, SubjectAlternativeName
+from cryptography_patched.x509.extensions import _key_identifier_from_public_key
+from cryptography_patched.x509.general_name import _lazy_import_idna
+from cryptography_patched.x509.oid import (
     AuthorityInformationAccessOID, ExtendedKeyUsageOID, ExtensionOID,
     NameOID, ObjectIdentifier, _OID_NAMES
 )

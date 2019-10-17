@@ -5,10 +5,10 @@
 from __future__ import absolute_import, division, print_function
 
 from cryptography import utils
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import padding
-from cryptography.hazmat.primitives.ciphers import CipherAlgorithm
-from cryptography.hazmat.primitives.ciphers.modes import Mode
+from cryptography_patched.hazmat.primitives import hashes, serialization
+from cryptography_patched.hazmat.primitives.asymmetric import padding
+from cryptography_patched.hazmat.primitives.ciphers import CipherAlgorithm
+from cryptography_patched.hazmat.primitives.ciphers.modes import Mode
 
 
 @utils.register_interface(CipherAlgorithm)

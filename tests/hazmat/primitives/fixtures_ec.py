@@ -4,7 +4,7 @@
 
 from __future__ import absolute_import, division, print_function
 
-from cryptography.hazmat.primitives.asymmetric import ec
+from cryptography_patched.hazmat.primitives.asymmetric import ec
 
 
 EC_KEY_SECT571R1 = ec.EllipticCurvePrivateNumbers(

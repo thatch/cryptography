@@ -12,8 +12,8 @@ import pretend
 
 import pytest
 
-import cryptography
-from cryptography.exceptions import UnsupportedAlgorithm, _Reasons
+import cryptography_patched
+from cryptography_patched.exceptions import UnsupportedAlgorithm, _Reasons
 
 import cryptography_vectors
 
@@ -3750,7 +3750,7 @@ def test_load_nist_ccm_vectors_vadt():
 
 
 def test_vector_version():
-    assert cryptography.__version__ == cryptography_vectors.__version__
+    assert cryptography_patched.__version__ == cryptography_vectors.__version__
 
 
 def test_raises_unsupported_algorithm_wrong_type():

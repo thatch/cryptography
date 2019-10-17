@@ -8,7 +8,7 @@ import os
 
 import pytest
 
-from cryptography.hazmat.backends.interfaces import HMACBackend
+from cryptography_patched.hazmat.backends.interfaces import HMACBackend
 
 from .utils import generate_kbkdf_counter_mode_test
 from ...utils import load_nist_kbkdf_vectors

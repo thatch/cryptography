@@ -10,11 +10,11 @@ import os
 
 import pytest
 
-from cryptography.hazmat.backends.interfaces import (
+from cryptography_patched.hazmat.backends.interfaces import (
     DERSerializationBackend, DHBackend, PEMSerializationBackend)
-from cryptography.hazmat.primitives import serialization
-from cryptography.hazmat.primitives.asymmetric import dh
-from cryptography.utils import int_from_bytes
+from cryptography_patched.hazmat.primitives import serialization
+from cryptography_patched.hazmat.primitives.asymmetric import dh
+from cryptography_patched.utils import int_from_bytes
 
 from ...doubles import DummyKeySerializationEncryption
 from ...utils import load_nist_vectors, load_vectors_from_file

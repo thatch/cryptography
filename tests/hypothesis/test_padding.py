@@ -5,7 +5,7 @@
 from hypothesis import HealthCheck, given, settings
 from hypothesis.strategies import binary, integers
 
-from cryptography.hazmat.primitives.padding import ANSIX923, PKCS7
+from cryptography_patched.hazmat.primitives.padding import ANSIX923, PKCS7
 
 
 @settings(suppress_health_check=[HealthCheck.too_slow], deadline=None)

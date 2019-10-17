@@ -13,7 +13,7 @@ from cryptography_patched.exceptions import (
 
 class Poly1305(object):
     def __init__(self, key):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if not backend.poly1305_supported():
             raise UnsupportedAlgorithm(
                 "poly1305 is not supported by this version of OpenSSL.",

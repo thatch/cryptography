@@ -5,7 +5,7 @@
 from hypothesis import HealthCheck, given, settings
 from hypothesis.strategies import binary
 
-from cryptography.fernet import Fernet
+from cryptography_patched.fernet import Fernet
 
 
 @settings(suppress_health_check=[HealthCheck.too_slow], deadline=None)

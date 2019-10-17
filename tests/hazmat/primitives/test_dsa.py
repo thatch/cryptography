@@ -9,16 +9,16 @@ import os
 
 import pytest
 
-from cryptography.exceptions import AlreadyFinalized, InvalidSignature
-from cryptography.hazmat.backends.interfaces import (
+from cryptography_patched.exceptions import AlreadyFinalized, InvalidSignature
+from cryptography_patched.hazmat.backends.interfaces import (
     DSABackend, PEMSerializationBackend
 )
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import dsa
-from cryptography.hazmat.primitives.asymmetric.utils import (
+from cryptography_patched.hazmat.primitives import hashes, serialization
+from cryptography_patched.hazmat.primitives.asymmetric import dsa
+from cryptography_patched.hazmat.primitives.asymmetric.utils import (
     Prehashed, encode_dss_signature
 )
-from cryptography.utils import CryptographyDeprecationWarning
+from cryptography_patched.utils import CryptographyDeprecationWarning
 
 from .fixtures_dsa import (
     DSA_KEY_1024, DSA_KEY_2048, DSA_KEY_3072

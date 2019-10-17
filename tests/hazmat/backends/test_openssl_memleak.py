@@ -12,7 +12,7 @@ import textwrap
 
 import pytest
 
-from cryptography.hazmat.bindings.openssl.binding import Binding
+from cryptography_patched.hazmat.bindings.openssl.binding import Binding
 
 
 MEMORY_LEAK_SCRIPT = """
@@ -25,7 +25,7 @@ def main(argv):
 
     import cffi
 
-    from cryptography.hazmat.bindings._openssl import ffi, lib
+    from cryptography_patched.hazmat.bindings._openssl import ffi, lib
 
     heap = {}
 
@@ -171,7 +171,7 @@ class TestAssertNoMemoryLeaks(object):
     def test_no_leak_free(self):
         assert_no_memory_leaks(textwrap.dedent("""
         def func():
-            from cryptography.hazmat.bindings.openssl.binding import Binding
+            from cryptography_patched.hazmat.bindings.openssl.binding import Binding
             b = Binding()
             name = b.lib.X509_NAME_new()
             b.lib.X509_NAME_free(name)
@@ -180,7 +180,7 @@ class TestAssertNoMemoryLeaks(object):
     def test_no_leak_gc(self):
         assert_no_memory_leaks(textwrap.dedent("""
         def func():
-            from cryptography.hazmat.bindings.openssl.binding import Binding
+            from cryptography_patched.hazmat.bindings.openssl.binding import Binding
             b = Binding()
             name = b.lib.X509_NAME_new()
             b.ffi.gc(name, b.lib.X509_NAME_free)
@@ -190,7 +190,7 @@ class TestAssertNoMemoryLeaks(object):
         with pytest.raises(AssertionError):
             assert_no_memory_leaks(textwrap.dedent("""
             def func():
-                from cryptography.hazmat.bindings.openssl.binding import (
+                from cryptography_patched.hazmat.bindings.openssl.binding import (
                     Binding
                 )
                 b = Binding()
@@ -214,7 +214,7 @@ class TestOpenSSLMemoryLeaks(object):
         assert_no_memory_leaks(textwrap.dedent("""
         def func(path):
             from cryptography import x509
-            from cryptography.hazmat.backends.openssl import backend
+            from cryptography_patched.hazmat.backends.openssl import backend
 
             import cryptography_vectors
 
@@ -233,7 +233,7 @@ class TestOpenSSLMemoryLeaks(object):
         assert_no_memory_leaks(textwrap.dedent("""
         def func(path):
             from cryptography import x509
-            from cryptography.hazmat.backends.openssl import backend
+            from cryptography_patched.hazmat.backends.openssl import backend
 
             import cryptography_vectors
 
@@ -249,9 +249,9 @@ class TestOpenSSLMemoryLeaks(object):
         assert_no_memory_leaks(textwrap.dedent("""
         def func():
             from cryptography import x509
-            from cryptography.hazmat.backends.openssl import backend
-            from cryptography.hazmat.primitives import hashes
-            from cryptography.hazmat.primitives.asymmetric import rsa
+            from cryptography_patched.hazmat.backends.openssl import backend
+            from cryptography_patched.hazmat.primitives import hashes
+            from cryptography_patched.hazmat.primitives.asymmetric import rsa
 
             private_key = rsa.generate_private_key(
                 key_size=2048, public_exponent=65537, backend=backend
@@ -268,8 +268,8 @@ class TestOpenSSLMemoryLeaks(object):
     def test_ec_private_numbers_private_key(self):
         assert_no_memory_leaks(textwrap.dedent("""
         def func():
-            from cryptography.hazmat.backends.openssl import backend
-            from cryptography.hazmat.primitives.asymmetric import ec
+            from cryptography_patched.hazmat.backends.openssl import backend
+            from cryptography_patched.hazmat.primitives.asymmetric import ec
 
             ec.EllipticCurvePrivateNumbers(
                 private_value=int(
@@ -293,15 +293,15 @@ class TestOpenSSLMemoryLeaks(object):
     def test_ec_derive_private_key(self):
         assert_no_memory_leaks(textwrap.dedent("""
         def func():
-            from cryptography.hazmat.backends.openssl import backend
-            from cryptography.hazmat.primitives.asymmetric import ec
+            from cryptography_patched.hazmat.backends.openssl import backend
+            from cryptography_patched.hazmat.primitives.asymmetric import ec
             ec.derive_private_key(1, ec.SECP256R1(), backend)
         """))
 
     def test_x25519_pubkey_from_private_key(self):
         assert_no_memory_leaks(textwrap.dedent("""
         def func():
-            from cryptography.hazmat.primitives.asymmetric import x25519
+            from cryptography_patched.hazmat.primitives.asymmetric import x25519
             private_key = x25519.X25519PrivateKey.generate()
             private_key.public_key()
         """))
@@ -310,9 +310,9 @@ class TestOpenSSLMemoryLeaks(object):
         assert_no_memory_leaks(textwrap.dedent("""
         def func():
             from cryptography import x509
-            from cryptography.hazmat.backends.openssl import backend
-            from cryptography.hazmat.primitives import hashes
-            from cryptography.x509 import ocsp
+            from cryptography_patched.hazmat.backends.openssl import backend
+            from cryptography_patched.hazmat.primitives import hashes
+            from cryptography_patched.x509 import ocsp
             import cryptography_vectors
 
             path = "x509/PKITS_data/certs/ValidcRLIssuerTest28EE.crt"
@@ -335,8 +335,8 @@ class TestOpenSSLMemoryLeaks(object):
         assert_no_memory_leaks(textwrap.dedent("""
         def func(path):
             from cryptography import x509
-            from cryptography.hazmat.backends.openssl import backend
-            from cryptography.hazmat.primitives.serialization import pkcs12
+            from cryptography_patched.hazmat.backends.openssl import backend
+            from cryptography_patched.hazmat.primitives.serialization import pkcs12
             import cryptography_vectors
 
             with cryptography_vectors.open_vector_file(path, "rb") as f:
@@ -350,10 +350,10 @@ class TestOpenSSLMemoryLeaks(object):
         def func():
             import datetime
             from cryptography import x509
-            from cryptography.hazmat.backends.openssl import backend
-            from cryptography.hazmat.primitives import hashes
-            from cryptography.hazmat.primitives.asymmetric import ec
-            from cryptography.x509.oid import NameOID
+            from cryptography_patched.hazmat.backends.openssl import backend
+            from cryptography_patched.hazmat.primitives import hashes
+            from cryptography_patched.hazmat.primitives.asymmetric import ec
+            from cryptography_patched.x509.oid import NameOID
 
             key = ec.generate_private_key(ec.SECP256R1(), backend)
             last_update = datetime.datetime(2002, 1, 1, 12, 1)
@@ -396,10 +396,10 @@ class TestOpenSSLMemoryLeaks(object):
             import datetime
 
             from cryptography import x509
-            from cryptography.hazmat.backends.openssl import backend
-            from cryptography.hazmat.primitives import hashes
-            from cryptography.hazmat.primitives.asymmetric import ec
-            from cryptography.x509.oid import (
+            from cryptography_patched.hazmat.backends.openssl import backend
+            from cryptography_patched.hazmat.primitives import hashes
+            from cryptography_patched.hazmat.primitives.asymmetric import ec
+            from cryptography_patched.x509.oid import (
                 AuthorityInformationAccessOID, ExtendedKeyUsageOID, NameOID
             )
 

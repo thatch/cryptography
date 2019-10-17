@@ -8,11 +8,11 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, InvalidSignature, _Reasons
 )
-from cryptography.hazmat.backends.interfaces import HMACBackend
-from cryptography.hazmat.primitives import hashes, hmac
+from cryptography_patched.hazmat.backends.interfaces import HMACBackend
+from cryptography_patched.hazmat.primitives import hashes, hmac
 
 from .utils import generate_base_hmac_test
 from ...doubles import DummyHashAlgorithm

@@ -8,10 +8,10 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import InvalidSignature, UnsupportedAlgorithm
-from cryptography.hazmat.backends.interfaces import EllipticCurveBackend
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import ec
+from cryptography_patched.exceptions import InvalidSignature, UnsupportedAlgorithm
+from cryptography_patched.hazmat.backends.interfaces import EllipticCurveBackend
+from cryptography_patched.hazmat.primitives import hashes, serialization
+from cryptography_patched.hazmat.primitives.asymmetric import ec
 
 
 _DIGESTS = {

@@ -8,13 +8,13 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import InvalidTag
-from cryptography.hazmat.backends.interfaces import CipherBackend
-from cryptography.hazmat.primitives import padding
-from cryptography.hazmat.primitives.ciphers import (
+from cryptography_patched.exceptions import InvalidTag
+from cryptography_patched.hazmat.backends.interfaces import CipherBackend
+from cryptography_patched.hazmat.primitives import padding
+from cryptography_patched.hazmat.primitives.ciphers import (
     Cipher, algorithms, modes
 )
-from cryptography.hazmat.primitives.ciphers.aead import AESCCM, AESGCM
+from cryptography_patched.hazmat.primitives.ciphers.aead import AESCCM, AESGCM
 
 from ..hazmat.primitives.test_aead import _aead_supported
 

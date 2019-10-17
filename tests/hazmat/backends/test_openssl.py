@@ -13,17 +13,17 @@ import textwrap
 import pytest
 
 from cryptography import x509
-from cryptography.exceptions import InternalError, _Reasons
-from cryptography.hazmat.backends.interfaces import DHBackend, RSABackend
-from cryptography.hazmat.backends.openssl.backend import (
+from cryptography_patched.exceptions import InternalError, _Reasons
+from cryptography_patched.hazmat.backends.interfaces import DHBackend, RSABackend
+from cryptography_patched.hazmat.backends.openssl.backend import (
     Backend, backend
 )
-from cryptography.hazmat.backends.openssl.ec import _sn_to_elliptic_curve
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import dh, dsa, padding
-from cryptography.hazmat.primitives.ciphers import Cipher
-from cryptography.hazmat.primitives.ciphers.algorithms import AES
-from cryptography.hazmat.primitives.ciphers.modes import CBC
+from cryptography_patched.hazmat.backends.openssl.ec import _sn_to_elliptic_curve
+from cryptography_patched.hazmat.primitives import hashes, serialization
+from cryptography_patched.hazmat.primitives.asymmetric import dh, dsa, padding
+from cryptography_patched.hazmat.primitives.ciphers import Cipher
+from cryptography_patched.hazmat.primitives.ciphers.algorithms import AES
+from cryptography_patched.hazmat.primitives.ciphers.modes import CBC
 
 from ..primitives.fixtures_rsa import RSA_KEY_2048, RSA_KEY_512
 from ...doubles import (
@@ -195,7 +195,7 @@ class TestOpenSSLRandomEngine(object):
         engine_printer = textwrap.dedent(
             """
             import sys
-            from cryptography.hazmat.backends.openssl.backend import backend
+            from cryptography_patched.hazmat.backends.openssl.backend import backend
 
             e = backend._lib.ENGINE_get_default_RAND()
             name = backend._lib.ENGINE_get_name(e)

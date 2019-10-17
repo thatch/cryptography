@@ -18,23 +18,23 @@ import pytz
 import six
 
 from cryptography import utils, x509
-from cryptography.exceptions import UnsupportedAlgorithm
-from cryptography.hazmat._der import (
+from cryptography_patched.exceptions import UnsupportedAlgorithm
+from cryptography_patched.hazmat._der import (
     BIT_STRING, CONSTRUCTED, CONTEXT_SPECIFIC, DERReader, GENERALIZED_TIME,
     INTEGER, OBJECT_IDENTIFIER, PRINTABLE_STRING, SEQUENCE, SET, UTC_TIME
 )
-from cryptography.hazmat.backends.interfaces import (
+from cryptography_patched.hazmat.backends.interfaces import (
     DSABackend, EllipticCurveBackend, RSABackend, X509Backend
 )
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import (
+from cryptography_patched.hazmat.primitives import hashes, serialization
+from cryptography_patched.hazmat.primitives.asymmetric import (
     dsa, ec, ed25519, ed448, padding, rsa
 )
-from cryptography.hazmat.primitives.asymmetric.utils import (
+from cryptography_patched.hazmat.primitives.asymmetric.utils import (
     decode_dss_signature
 )
-from cryptography.x509.name import _ASN1Type
-from cryptography.x509.oid import (
+from cryptography_patched.x509.name import _ASN1Type
+from cryptography_patched.x509.oid import (
     AuthorityInformationAccessOID, ExtendedKeyUsageOID, ExtensionOID,
     NameOID, SignatureAlgorithmOID
 )

@@ -8,8 +8,8 @@ import binascii
 
 import pytest
 
-from cryptography.hazmat.backends.interfaces import HMACBackend
-from cryptography.hazmat.primitives import hashes, hmac
+from cryptography_patched.hazmat.backends.interfaces import HMACBackend
+from cryptography_patched.hazmat.primitives import hashes, hmac
 
 from .utils import generate_hmac_test
 from ...utils import load_hash_vectors

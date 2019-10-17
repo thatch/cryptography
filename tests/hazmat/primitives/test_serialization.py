@@ -11,15 +11,15 @@ import textwrap
 
 import pytest
 
-from cryptography.exceptions import UnsupportedAlgorithm, _Reasons
-from cryptography.hazmat.backends.interfaces import (
+from cryptography_patched.exceptions import UnsupportedAlgorithm, _Reasons
+from cryptography_patched.hazmat.backends.interfaces import (
     DERSerializationBackend, DSABackend, EllipticCurveBackend,
     PEMSerializationBackend, RSABackend
 )
-from cryptography.hazmat.primitives.asymmetric import (
+from cryptography_patched.hazmat.primitives.asymmetric import (
     dsa, ec, ed25519, ed448, rsa
 )
-from cryptography.hazmat.primitives.serialization import (
+from cryptography_patched.hazmat.primitives.serialization import (
     BestAvailableEncryption, Encoding, NoEncryption,
     PrivateFormat, PublicFormat,
     load_der_parameters, load_der_private_key,

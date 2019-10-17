@@ -8,10 +8,10 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import UnsupportedAlgorithm
-from cryptography.hazmat.backends.interfaces import EllipticCurveBackend
-from cryptography.hazmat.primitives import serialization
-from cryptography.hazmat.primitives.asymmetric import ec
+from cryptography_patched.exceptions import UnsupportedAlgorithm
+from cryptography_patched.hazmat.backends.interfaces import EllipticCurveBackend
+from cryptography_patched.hazmat.primitives import serialization
+from cryptography_patched.hazmat.primitives.asymmetric import ec
 
 from ..hazmat.primitives.test_ec import _skip_exchange_algorithm_unsupported
 

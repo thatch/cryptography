@@ -12,7 +12,7 @@ _DECRYPT = 0
 
 
 def _aead_cipher_name(cipher):
-    from cryptography.hazmat.primitives.ciphers.aead import (
+    from cryptography_patched.hazmat.primitives.ciphers.aead import (
         AESCCM, AESGCM, ChaCha20Poly1305
     )
     if isinstance(cipher, ChaCha20Poly1305):
@@ -98,7 +98,7 @@ def _process_data(backend, ctx, data):
 
 
 def _encrypt(backend, cipher, nonce, data, associated_data, tag_length):
-    from cryptography.hazmat.primitives.ciphers.aead import AESCCM
+    from cryptography_patched.hazmat.primitives.ciphers.aead import AESCCM
     cipher_name = _aead_cipher_name(cipher)
     ctx = _aead_setup(
         backend, cipher_name, cipher._key, nonce, None, tag_length, _ENCRYPT
@@ -125,7 +125,7 @@ def _encrypt(backend, cipher, nonce, data, associated_data, tag_length):
 
 
 def _decrypt(backend, cipher, nonce, data, associated_data, tag_length):
-    from cryptography.hazmat.primitives.ciphers.aead import AESCCM
+    from cryptography_patched.hazmat.primitives.ciphers.aead import AESCCM
     if len(data) < tag_length:
         raise InvalidTag
     tag = data[-tag_length:]

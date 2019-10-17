@@ -643,7 +643,7 @@ def _decode_inhibit_any_policy(backend, asn1_int):
 
 
 def _decode_precert_signed_certificate_timestamps(backend, asn1_scts):
-    from cryptography.hazmat.backends.openssl.x509 import (
+    from cryptography_patched.hazmat.backends.openssl.x509 import (
         _SignedCertificateTimestamp
     )
     asn1_scts = backend._ffi.cast("Cryptography_STACK_OF_SCT *", asn1_scts)

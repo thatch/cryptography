@@ -9,11 +9,11 @@ import os
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, InvalidKey, UnsupportedAlgorithm
 )
-from cryptography.hazmat.backends.interfaces import ScryptBackend
-from cryptography.hazmat.primitives.kdf.scrypt import Scrypt, _MEM_LIMIT
+from cryptography_patched.hazmat.backends.interfaces import ScryptBackend
+from cryptography_patched.hazmat.primitives.kdf.scrypt import Scrypt, _MEM_LIMIT
 
 from tests.utils import load_nist_vectors, load_vectors_from_file
 

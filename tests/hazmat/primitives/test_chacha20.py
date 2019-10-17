@@ -10,8 +10,8 @@ import struct
 
 import pytest
 
-from cryptography.hazmat.backends.interfaces import CipherBackend
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms
+from cryptography_patched.hazmat.backends.interfaces import CipherBackend
+from cryptography_patched.hazmat.primitives.ciphers import Cipher, algorithms
 
 from .utils import _load_all_params
 from ...utils import load_nist_vectors

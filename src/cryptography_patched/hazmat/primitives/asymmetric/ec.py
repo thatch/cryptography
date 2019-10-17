@@ -165,7 +165,7 @@ class EllipticCurvePublicKey(object):
         if six.indexbytes(data, 0) not in [0x02, 0x03, 0x04]:
             raise ValueError("Unsupported elliptic curve point type")
 
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         return backend.load_elliptic_curve_public_bytes(curve, data)
 
 

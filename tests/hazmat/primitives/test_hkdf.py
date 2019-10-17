@@ -9,12 +9,12 @@ import os
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, InvalidKey, _Reasons
 )
-from cryptography.hazmat.backends.interfaces import HMACBackend
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.hkdf import HKDF, HKDFExpand
+from cryptography_patched.hazmat.backends.interfaces import HMACBackend
+from cryptography_patched.hazmat.primitives import hashes
+from cryptography_patched.hazmat.primitives.kdf.hkdf import HKDF, HKDFExpand
 
 from ...utils import (
     load_nist_vectors, load_vectors_from_file, raises_unsupported_algorithm

@@ -6,11 +6,11 @@ from __future__ import absolute_import, division, print_function
 
 import pytest
 
-from cryptography.exceptions import _Reasons
-from cryptography.hazmat.backends.interfaces import HMACBackend
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.twofactor import InvalidToken
-from cryptography.hazmat.primitives.twofactor.totp import TOTP
+from cryptography_patched.exceptions import _Reasons
+from cryptography_patched.hazmat.backends.interfaces import HMACBackend
+from cryptography_patched.hazmat.primitives import hashes
+from cryptography_patched.hazmat.primitives.twofactor import InvalidToken
+from cryptography_patched.hazmat.primitives.twofactor.totp import TOTP
 
 from ....utils import (
     load_nist_vectors, load_vectors_from_file, raises_unsupported_algorithm

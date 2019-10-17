@@ -61,7 +61,7 @@ class ObjectIdentifier(object):
     @property
     def _name(self):
         # Lazy import to avoid an import cycle
-        from cryptography.x509.oid import _OID_NAMES
+        from cryptography_patched.x509.oid import _OID_NAMES
         return _OID_NAMES.get(self, "Unknown OID")
 
     dotted_string = utils.read_only_property("_dotted_string")

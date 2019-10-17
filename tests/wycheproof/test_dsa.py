@@ -8,9 +8,9 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import InvalidSignature
-from cryptography.hazmat.backends.interfaces import DSABackend
-from cryptography.hazmat.primitives import hashes, serialization
+from cryptography_patched.exceptions import InvalidSignature
+from cryptography_patched.hazmat.backends.interfaces import DSABackend
+from cryptography_patched.hazmat.primitives import hashes, serialization
 
 
 _DIGESTS = {

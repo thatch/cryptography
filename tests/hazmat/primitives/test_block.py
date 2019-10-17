@@ -8,11 +8,11 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, _Reasons
 )
-from cryptography.hazmat.backends.interfaces import CipherBackend
-from cryptography.hazmat.primitives.ciphers import (
+from cryptography_patched.hazmat.backends.interfaces import CipherBackend
+from cryptography_patched.hazmat.primitives.ciphers import (
     Cipher, algorithms, base, modes
 )
 

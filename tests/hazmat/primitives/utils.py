@@ -10,18 +10,18 @@ import os
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, AlreadyUpdated, InvalidSignature, InvalidTag,
     NotYetFinalized
 )
-from cryptography.hazmat.primitives import hashes, hmac
-from cryptography.hazmat.primitives.asymmetric import rsa
-from cryptography.hazmat.primitives.ciphers import Cipher
-from cryptography.hazmat.primitives.kdf.hkdf import HKDF, HKDFExpand
-from cryptography.hazmat.primitives.kdf.kbkdf import (
+from cryptography_patched.hazmat.primitives import hashes, hmac
+from cryptography_patched.hazmat.primitives.asymmetric import rsa
+from cryptography_patched.hazmat.primitives.ciphers import Cipher
+from cryptography_patched.hazmat.primitives.kdf.hkdf import HKDF, HKDFExpand
+from cryptography_patched.hazmat.primitives.kdf.kbkdf import (
     CounterLocation, KBKDFHMAC, Mode
 )
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+from cryptography_patched.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 from ...utils import load_vectors_from_file
 

@@ -9,8 +9,8 @@ import os
 
 import pytest
 
-from cryptography.hazmat.backends.interfaces import CipherBackend
-from cryptography.hazmat.primitives.ciphers import algorithms
+from cryptography_patched.hazmat.backends.interfaces import CipherBackend
+from cryptography_patched.hazmat.primitives.ciphers import algorithms
 
 from .utils import generate_stream_encryption_test
 from ...utils import load_nist_vectors

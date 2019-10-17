@@ -12,15 +12,15 @@ from binascii import hexlify
 import pytest
 
 from cryptography import exceptions, utils, x509
-from cryptography.hazmat.backends.interfaces import (
+from cryptography_patched.hazmat.backends.interfaces import (
     EllipticCurveBackend, PEMSerializationBackend
 )
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import ec
-from cryptography.hazmat.primitives.asymmetric.utils import (
+from cryptography_patched.hazmat.primitives import hashes, serialization
+from cryptography_patched.hazmat.primitives.asymmetric import ec
+from cryptography_patched.hazmat.primitives.asymmetric.utils import (
     Prehashed, encode_dss_signature
 )
-from cryptography.utils import CryptographyDeprecationWarning
+from cryptography_patched.utils import CryptographyDeprecationWarning
 
 from .fixtures_ec import EC_KEY_SECP384R1
 from ...doubles import DummyKeySerializationEncryption

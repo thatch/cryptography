@@ -11,11 +11,11 @@ import os
 import pytest
 
 from cryptography import x509
-from cryptography.exceptions import UnsupportedAlgorithm
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import ec, ed25519, ed448
-from cryptography.hazmat.primitives.asymmetric.padding import PKCS1v15
-from cryptography.x509 import ocsp
+from cryptography_patched.exceptions import UnsupportedAlgorithm
+from cryptography_patched.hazmat.primitives import hashes, serialization
+from cryptography_patched.hazmat.primitives.asymmetric import ec, ed25519, ed448
+from cryptography_patched.hazmat.primitives.asymmetric.padding import PKCS1v15
+from cryptography_patched.x509 import ocsp
 
 from .test_x509 import _load_cert
 from ..hazmat.primitives.fixtures_ec import EC_KEY_SECP256R1
@@ -31,7 +31,7 @@ def _load_data(filename, loader):
 
 
 def _cert_and_issuer():
-    from cryptography.hazmat.backends.openssl.backend import backend
+    from cryptography_patched.hazmat.backends.openssl.backend import backend
     cert = _load_cert(
         os.path.join("x509", "cryptography.io.pem"),
         x509.load_pem_x509_certificate,
@@ -46,7 +46,7 @@ def _cert_and_issuer():
 
 
 def _generate_root(private_key=None, algorithm=hashes.SHA256()):
-    from cryptography.hazmat.backends.openssl.backend import backend
+    from cryptography_patched.hazmat.backends.openssl.backend import backend
 
     if private_key is None:
         private_key = EC_KEY_SECP256R1.private_key(backend)
@@ -512,7 +512,7 @@ class TestOCSPResponseBuilder(object):
             cert, issuer, hashes.SHA1(), ocsp.OCSPCertStatus.GOOD, this_update,
             next_update, None, None
         )
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         diff_key = ec.generate_private_key(ec.SECP256R1(), backend)
         with pytest.raises(ValueError):
             builder.sign(diff_key, hashes.SHA256())
@@ -576,7 +576,7 @@ class TestOCSPResponse(object):
             os.path.join("x509", "ocsp", "resp-sha256.der"),
             ocsp.load_der_ocsp_response,
         )
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         issuer = _load_cert(
             os.path.join("x509", "letsencryptx3.pem"),
             x509.load_pem_x509_certificate,

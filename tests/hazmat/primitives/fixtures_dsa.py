@@ -4,7 +4,7 @@
 
 from __future__ import absolute_import, division, print_function
 
-from cryptography.hazmat.primitives.asymmetric.dsa import (
+from cryptography_patched.hazmat.primitives.asymmetric.dsa import (
     DSAParameterNumbers, DSAPrivateNumbers, DSAPublicNumbers
 )
 

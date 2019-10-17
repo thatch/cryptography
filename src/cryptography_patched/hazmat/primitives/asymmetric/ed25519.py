@@ -19,7 +19,7 @@ _ED25519_SIG_SIZE = 64
 class Ed25519PublicKey(object):
     @classmethod
     def from_public_bytes(cls, data):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if not backend.ed25519_supported():
             raise UnsupportedAlgorithm(
                 "ed25519 is not supported by this version of OpenSSL.",
@@ -45,7 +45,7 @@ class Ed25519PublicKey(object):
 class Ed25519PrivateKey(object):
     @classmethod
     def generate(cls):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if not backend.ed25519_supported():
             raise UnsupportedAlgorithm(
                 "ed25519 is not supported by this version of OpenSSL.",
@@ -56,7 +56,7 @@ class Ed25519PrivateKey(object):
 
     @classmethod
     def from_private_bytes(cls, data):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if not backend.ed25519_supported():
             raise UnsupportedAlgorithm(
                 "ed25519 is not supported by this version of OpenSSL.",

@@ -9,7 +9,7 @@ import threading
 import types
 import warnings
 
-import cryptography
+import cryptography_patched
 from cryptography_patched import utils
 from cryptography_patched.exceptions import InternalError
 from cryptography_patched.hazmat.bindings._openssl import ffi, lib
@@ -185,7 +185,7 @@ def _verify_package_version(version):
         )
 
 
-_verify_package_version(cryptography.__version__)
+_verify_package_version(cryptography_patched.__version__)
 
 # OpenSSL is not thread safe until the locks are initialized. We call this
 # method in module scope so that it executes with the import lock. On

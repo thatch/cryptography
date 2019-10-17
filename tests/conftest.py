@@ -6,7 +6,7 @@ from __future__ import absolute_import, division, print_function
 
 import pytest
 
-from cryptography.hazmat.backends.openssl import backend as openssl_backend
+from cryptography_patched.hazmat.backends.openssl import backend as openssl_backend
 
 from .utils import (
     check_backend_support, load_wycheproof_tests, skip_if_wycheproof_none

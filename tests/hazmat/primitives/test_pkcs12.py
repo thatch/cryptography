@@ -9,9 +9,9 @@ import os
 import pytest
 
 from cryptography import x509
-from cryptography.hazmat.backends.interfaces import DERSerializationBackend
-from cryptography.hazmat.primitives.serialization import load_pem_private_key
-from cryptography.hazmat.primitives.serialization.pkcs12 import (
+from cryptography_patched.hazmat.backends.interfaces import DERSerializationBackend
+from cryptography_patched.hazmat.primitives.serialization import load_pem_private_key
+from cryptography_patched.hazmat.primitives.serialization.pkcs12 import (
     load_key_and_certificates
 )
 

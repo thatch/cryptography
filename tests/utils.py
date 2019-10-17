@@ -16,7 +16,7 @@ import pytest
 
 import six
 
-from cryptography.exceptions import UnsupportedAlgorithm
+from cryptography_patched.exceptions import UnsupportedAlgorithm
 
 import cryptography_vectors
 

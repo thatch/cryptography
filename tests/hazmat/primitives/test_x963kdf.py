@@ -8,12 +8,12 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, InvalidKey, _Reasons
 )
-from cryptography.hazmat.backends.interfaces import HashBackend
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.x963kdf import X963KDF
+from cryptography_patched.hazmat.backends.interfaces import HashBackend
+from cryptography_patched.hazmat.primitives import hashes
+from cryptography_patched.hazmat.primitives.kdf.x963kdf import X963KDF
 
 from ...utils import raises_unsupported_algorithm
 

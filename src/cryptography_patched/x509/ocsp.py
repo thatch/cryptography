@@ -65,12 +65,12 @@ _CERT_STATUS_TO_ENUM = dict((x.value, x) for x in OCSPCertStatus)
 
 
 def load_der_ocsp_request(data):
-    from cryptography.hazmat.backends.openssl.backend import backend
+    from cryptography_patched.hazmat.backends.openssl.backend import backend
     return backend.load_der_ocsp_request(data)
 
 
 def load_der_ocsp_response(data):
-    from cryptography.hazmat.backends.openssl.backend import backend
+    from cryptography_patched.hazmat.backends.openssl.backend import backend
     return backend.load_der_ocsp_response(data)
 
 
@@ -104,7 +104,7 @@ class OCSPRequestBuilder(object):
         )
 
     def build(self):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if self._request is None:
             raise ValueError("You must add a certificate before building")
 
@@ -236,7 +236,7 @@ class OCSPResponseBuilder(object):
         )
 
     def sign(self, private_key, algorithm):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if self._response is None:
             raise ValueError("You must add a response before signing")
         if self._responder_id is None:
@@ -257,7 +257,7 @@ class OCSPResponseBuilder(object):
 
     @classmethod
     def build_unsuccessful(cls, response_status):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if not isinstance(response_status, OCSPResponseStatus):
             raise TypeError(
                 "response_status must be an item from OCSPResponseStatus"

@@ -17,10 +17,10 @@ import pytest
 
 import six
 
-from cryptography.fernet import Fernet, InvalidToken, MultiFernet
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.backends.interfaces import CipherBackend, HMACBackend
-from cryptography.hazmat.primitives.ciphers import algorithms, modes
+from cryptography_patched.fernet import Fernet, InvalidToken, MultiFernet
+from cryptography_patched.hazmat.backends import default_backend
+from cryptography_patched.hazmat.backends.interfaces import CipherBackend, HMACBackend
+from cryptography_patched.hazmat.primitives.ciphers import algorithms, modes
 
 import cryptography_vectors
 

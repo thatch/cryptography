@@ -10,9 +10,9 @@ import os
 import pytest
 
 from cryptography import utils
-from cryptography.exceptions import _Reasons
-from cryptography.hazmat.primitives import serialization
-from cryptography.hazmat.primitives.asymmetric.x25519 import (
+from cryptography_patched.exceptions import _Reasons
+from cryptography_patched.hazmat.primitives import serialization
+from cryptography_patched.hazmat.primitives.asymmetric.x25519 import (
     X25519PrivateKey, X25519PublicKey
 )
 

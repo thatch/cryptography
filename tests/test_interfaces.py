@@ -8,7 +8,7 @@ import pytest
 
 import six
 
-from cryptography.utils import (
+from cryptography_patched.utils import (
     InterfaceNotImplemented, register_interface_if, verify_interface
 )
 

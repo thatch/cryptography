@@ -6,7 +6,7 @@ from __future__ import absolute_import, division, print_function
 
 import pytest
 
-from cryptography.hazmat.primitives import constant_time
+from cryptography_patched.hazmat.primitives import constant_time
 
 
 class TestConstantTimeBytesEq(object):

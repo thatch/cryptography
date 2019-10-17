@@ -6,7 +6,7 @@ from __future__ import absolute_import, division, print_function
 
 import pytest
 
-from cryptography.hazmat._der import (
+from cryptography_patched.hazmat._der import (
     DERReader, INTEGER, NULL, OCTET_STRING, SEQUENCE, encode_der,
     encode_der_integer
 )

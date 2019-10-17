@@ -10,7 +10,7 @@ import warnings
 
 import pytest
 
-from cryptography.utils import deprecated
+from cryptography_patched.utils import deprecated
 
 
 class TestDeprecated(object):

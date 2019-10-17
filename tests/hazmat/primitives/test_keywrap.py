@@ -9,9 +9,9 @@ import os
 
 import pytest
 
-from cryptography.hazmat.backends.interfaces import CipherBackend
-from cryptography.hazmat.primitives import keywrap
-from cryptography.hazmat.primitives.ciphers import algorithms, modes
+from cryptography_patched.hazmat.backends.interfaces import CipherBackend
+from cryptography_patched.hazmat.primitives import keywrap
+from cryptography_patched.hazmat.primitives.ciphers import algorithms, modes
 
 from .utils import _load_all_params
 from ...utils import load_nist_vectors

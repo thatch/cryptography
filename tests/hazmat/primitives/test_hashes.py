@@ -8,9 +8,9 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import AlreadyFinalized, _Reasons
-from cryptography.hazmat.backends.interfaces import HashBackend
-from cryptography.hazmat.primitives import hashes
+from cryptography_patched.exceptions import AlreadyFinalized, _Reasons
+from cryptography_patched.hazmat.backends.interfaces import HashBackend
+from cryptography_patched.hazmat.primitives import hashes
 
 from .utils import generate_base_hash_test
 from ...doubles import DummyHashAlgorithm

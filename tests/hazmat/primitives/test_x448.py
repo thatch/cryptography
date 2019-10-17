@@ -9,9 +9,9 @@ import os
 
 import pytest
 
-from cryptography.exceptions import _Reasons
-from cryptography.hazmat.primitives import serialization
-from cryptography.hazmat.primitives.asymmetric.x448 import (
+from cryptography_patched.exceptions import _Reasons
+from cryptography_patched.hazmat.primitives import serialization
+from cryptography_patched.hazmat.primitives.asymmetric.x448 import (
     X448PrivateKey, X448PublicKey
 )
 

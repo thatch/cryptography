@@ -8,14 +8,14 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, InvalidSignature, _Reasons
 )
-from cryptography.hazmat.backends.interfaces import CMACBackend
-from cryptography.hazmat.primitives.ciphers.algorithms import (
+from cryptography_patched.hazmat.backends.interfaces import CMACBackend
+from cryptography_patched.hazmat.primitives.ciphers.algorithms import (
     AES, ARC4, TripleDES
 )
-from cryptography.hazmat.primitives.cmac import CMAC
+from cryptography_patched.hazmat.primitives.cmac import CMAC
 
 from ...utils import (
     load_nist_vectors, load_vectors_from_file, raises_unsupported_algorithm

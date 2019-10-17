@@ -8,10 +8,10 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import InvalidSignature
-from cryptography.hazmat.backends.interfaces import CMACBackend
-from cryptography.hazmat.primitives.ciphers.algorithms import AES
-from cryptography.hazmat.primitives.cmac import CMAC
+from cryptography_patched.exceptions import InvalidSignature
+from cryptography_patched.hazmat.backends.interfaces import CMACBackend
+from cryptography_patched.hazmat.primitives.ciphers.algorithms import AES
+from cryptography_patched.hazmat.primitives.cmac import CMAC
 
 
 @pytest.mark.requires_backend_interface(interface=CMACBackend)

@@ -6,12 +6,12 @@ from __future__ import absolute_import, division, print_function
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, InvalidKey, _Reasons
 )
-from cryptography.hazmat.backends.interfaces import HMACBackend
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.kbkdf import (
+from cryptography_patched.hazmat.backends.interfaces import HMACBackend
+from cryptography_patched.hazmat.primitives import hashes
+from cryptography_patched.hazmat.primitives.kdf.kbkdf import (
     CounterLocation, KBKDFHMAC, Mode
 )
 

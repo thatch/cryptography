@@ -11,7 +11,7 @@ import pytest
 import pytz
 
 from cryptography import x509
-from cryptography.hazmat.backends.interfaces import X509Backend
+from cryptography_patched.hazmat.backends.interfaces import X509Backend
 
 
 class TestRevokedCertificateBuilder(object):

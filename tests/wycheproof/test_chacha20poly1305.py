@@ -8,9 +8,9 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import InvalidTag
-from cryptography.hazmat.backends.interfaces import CipherBackend
-from cryptography.hazmat.primitives.ciphers.aead import ChaCha20Poly1305
+from cryptography_patched.exceptions import InvalidTag
+from cryptography_patched.hazmat.backends.interfaces import CipherBackend
+from cryptography_patched.hazmat.primitives.ciphers.aead import ChaCha20Poly1305
 
 from ..hazmat.primitives.test_aead import _aead_supported
 

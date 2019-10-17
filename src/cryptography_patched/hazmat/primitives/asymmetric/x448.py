@@ -15,7 +15,7 @@ from cryptography_patched.exceptions import UnsupportedAlgorithm, _Reasons
 class X448PublicKey(object):
     @classmethod
     def from_public_bytes(cls, data):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if not backend.x448_supported():
             raise UnsupportedAlgorithm(
                 "X448 is not supported by this version of OpenSSL.",
@@ -35,7 +35,7 @@ class X448PublicKey(object):
 class X448PrivateKey(object):
     @classmethod
     def generate(cls):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if not backend.x448_supported():
             raise UnsupportedAlgorithm(
                 "X448 is not supported by this version of OpenSSL.",
@@ -45,7 +45,7 @@ class X448PrivateKey(object):
 
     @classmethod
     def from_private_bytes(cls, data):
-        from cryptography.hazmat.backends.openssl.backend import backend
+        from cryptography_patched.hazmat.backends.openssl.backend import backend
         if not backend.x448_supported():
             raise UnsupportedAlgorithm(
                 "X448 is not supported by this version of OpenSSL.",

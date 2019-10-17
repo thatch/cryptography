@@ -6,8 +6,8 @@ from __future__ import absolute_import, division, print_function
 
 import pytest
 
-from cryptography.exceptions import InternalError
-from cryptography.hazmat.bindings.openssl.binding import (
+from cryptography_patched.exceptions import InternalError
+from cryptography_patched.hazmat.bindings.openssl.binding import (
     Binding, _consume_errors, _openssl_assert, _verify_package_version
 )
 

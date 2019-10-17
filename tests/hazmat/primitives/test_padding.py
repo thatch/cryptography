@@ -8,8 +8,8 @@ import pytest
 
 import six
 
-from cryptography.exceptions import AlreadyFinalized
-from cryptography.hazmat.primitives import padding
+from cryptography_patched.exceptions import AlreadyFinalized
+from cryptography_patched.hazmat.primitives import padding
 
 
 class TestPKCS7(object):

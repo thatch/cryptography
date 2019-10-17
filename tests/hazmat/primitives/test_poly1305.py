@@ -9,10 +9,10 @@ import os
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, InvalidSignature, _Reasons
 )
-from cryptography.hazmat.primitives.poly1305 import Poly1305
+from cryptography_patched.hazmat.primitives.poly1305 import Poly1305
 
 from ...utils import (
     load_nist_vectors, load_vectors_from_file, raises_unsupported_algorithm

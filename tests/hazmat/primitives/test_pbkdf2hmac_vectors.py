@@ -6,8 +6,8 @@ from __future__ import absolute_import, division, print_function
 
 import pytest
 
-from cryptography.hazmat.backends.interfaces import PBKDF2HMACBackend
-from cryptography.hazmat.primitives import hashes
+from cryptography_patched.hazmat.backends.interfaces import PBKDF2HMACBackend
+from cryptography_patched.hazmat.primitives import hashes
 
 from .utils import generate_pbkdf2_test
 from ...utils import load_nist_vectors

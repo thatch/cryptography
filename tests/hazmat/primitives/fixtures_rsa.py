@@ -4,7 +4,7 @@
 
 from __future__ import absolute_import, division, print_function
 
-from cryptography.hazmat.primitives.asymmetric.rsa import (
+from cryptography_patched.hazmat.primitives.asymmetric.rsa import (
     RSAPrivateNumbers, RSAPublicNumbers
 )
 

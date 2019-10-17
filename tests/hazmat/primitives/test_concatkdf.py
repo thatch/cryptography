@@ -8,14 +8,14 @@ import binascii
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, InvalidKey, _Reasons
 )
-from cryptography.hazmat.backends.interfaces import HMACBackend
-from cryptography.hazmat.backends.interfaces import HashBackend
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.concatkdf import ConcatKDFHMAC
-from cryptography.hazmat.primitives.kdf.concatkdf import ConcatKDFHash
+from cryptography_patched.hazmat.backends.interfaces import HMACBackend
+from cryptography_patched.hazmat.backends.interfaces import HashBackend
+from cryptography_patched.hazmat.primitives import hashes
+from cryptography_patched.hazmat.primitives.kdf.concatkdf import ConcatKDFHMAC
+from cryptography_patched.hazmat.primitives.kdf.concatkdf import ConcatKDFHash
 
 from ...utils import raises_unsupported_algorithm
 

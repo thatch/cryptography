@@ -9,9 +9,9 @@ import os
 
 import pytest
 
-from cryptography.exceptions import InvalidTag, UnsupportedAlgorithm, _Reasons
-from cryptography.hazmat.backends.interfaces import CipherBackend
-from cryptography.hazmat.primitives.ciphers.aead import (
+from cryptography_patched.exceptions import InvalidTag, UnsupportedAlgorithm, _Reasons
+from cryptography_patched.hazmat.backends.interfaces import CipherBackend
+from cryptography_patched.hazmat.primitives.ciphers.aead import (
     AESCCM, AESGCM, ChaCha20Poly1305
 )
 

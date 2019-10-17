@@ -11,20 +11,20 @@ import os
 
 import pytest
 
-from cryptography.exceptions import (
+from cryptography_patched.exceptions import (
     AlreadyFinalized, InvalidSignature, _Reasons
 )
-from cryptography.hazmat.backends.interfaces import (
+from cryptography_patched.hazmat.backends.interfaces import (
     PEMSerializationBackend, RSABackend
 )
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import (
+from cryptography_patched.hazmat.primitives import hashes, serialization
+from cryptography_patched.hazmat.primitives.asymmetric import (
     padding, rsa, utils as asym_utils
 )
-from cryptography.hazmat.primitives.asymmetric.rsa import (
+from cryptography_patched.hazmat.primitives.asymmetric.rsa import (
     RSAPrivateNumbers, RSAPublicNumbers
 )
-from cryptography.utils import CryptographyDeprecationWarning
+from cryptography_patched.utils import CryptographyDeprecationWarning
 
 from .fixtures_rsa import (
     RSA_KEY_1024, RSA_KEY_1025, RSA_KEY_1026, RSA_KEY_1027, RSA_KEY_1028,

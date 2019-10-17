@@ -11,12 +11,12 @@ import pytest
 import pytz
 
 from cryptography import x509
-from cryptography.hazmat.backends.interfaces import (
+from cryptography_patched.hazmat.backends.interfaces import (
     DSABackend, EllipticCurveBackend, RSABackend, X509Backend
 )
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.asymmetric import ec, ed25519, ed448
-from cryptography.x509.oid import (
+from cryptography_patched.hazmat.primitives import hashes
+from cryptography_patched.hazmat.primitives.asymmetric import ec, ed25519, ed448
+from cryptography_patched.x509.oid import (
     AuthorityInformationAccessOID, NameOID, SignatureAlgorithmOID
 )
 

@@ -9,11 +9,11 @@ import os
 
 import pytest
 
-from cryptography.exceptions import AlreadyFinalized, _Reasons
-from cryptography.hazmat.backends.interfaces import CipherBackend
-from cryptography.hazmat.primitives import ciphers
-from cryptography.hazmat.primitives.ciphers import modes
-from cryptography.hazmat.primitives.ciphers.algorithms import (
+from cryptography_patched.exceptions import AlreadyFinalized, _Reasons
+from cryptography_patched.hazmat.backends.interfaces import CipherBackend
+from cryptography_patched.hazmat.primitives import ciphers
+from cryptography_patched.hazmat.primitives.ciphers import modes
+from cryptography_patched.hazmat.primitives.ciphers.algorithms import (
     AES, ARC4, Blowfish, CAST5, Camellia, IDEA, SEED, TripleDES
 )
 

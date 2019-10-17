@@ -6,7 +6,7 @@ from __future__ import absolute_import, division, print_function
 
 import pytest
 
-from cryptography.hazmat.primitives.asymmetric.utils import (
+from cryptography_patched.hazmat.primitives.asymmetric.utils import (
     Prehashed, decode_dss_signature, encode_dss_signature
 )
 

@@ -9,9 +9,9 @@ import os
 
 import pytest
 
-from cryptography.exceptions import InvalidSignature, _Reasons
-from cryptography.hazmat.primitives import serialization
-from cryptography.hazmat.primitives.asymmetric.ed25519 import (
+from cryptography_patched.exceptions import InvalidSignature, _Reasons
+from cryptography_patched.hazmat.primitives import serialization
+from cryptography_patched.hazmat.primitives.asymmetric.ed25519 import (
     Ed25519PrivateKey, Ed25519PublicKey
 )
 
